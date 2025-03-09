@@ -8,7 +8,7 @@ registerLink.addEventListener('click',()=>{
 });
 LoginLink.addEventListener('click',()=>{
     wrapper.classList.remove('active');
-});
+})
 btnPopup.addEventListener('click',()=>{
     wrapper.classList.add('active-popup');
 });
@@ -62,3 +62,34 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", checkMenuVisibility);
     checkMenuVisibility(); // Kiểm tra ngay khi load trang
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const menu = document.querySelector(".address");
+
+    function checkMenuVisibility() {
+        const menuPosition = menu.getBoundingClientRect().top;
+        const screenHeight = window.innerHeight;
+
+        if (menuPosition < screenHeight * 0.4&& menuPosition > -screenHeight * 0.8) {
+            menu.classList.add("show");
+        } else {
+            menu.classList.remove("show"); // Ẩn đi khi nó vượt quá 80% màn hình phía trên
+        }
+    }
+
+    window.addEventListener("scroll", checkMenuVisibility);
+    checkMenuVisibility(); // Kiểm tra ngay khi load trang
+});
+const order_people=document.querySelector('.people-order')
+const order_online=document.querySelector('.btn-order-online')
+order_online.addEventListener('click',()=>{
+    order_people.classList.add('active');
+})
+const closee=document.querySelector('.icon_close_2')
+
+closee.addEventListener('click',()=>{
+  order_people.classList.remove('active');
+})
+const order_head=document.querySelector('.order')
+order_head.addEventListener('click',()=>{
+    order_people.classList.add('active');
+})

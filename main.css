@@ -58,6 +58,52 @@
 .cart-item-container .cart-item .content p{
     color:#fff;
 }
+.people-order{
+    position: absolute;
+    left: 0;
+    top:100px;
+    width: 100vw;
+    height: 100vh;
+    background: transparent;
+    opacity: 0;
+    transform: translateY(-100vh);
+    transition: opacity 1.5s ease-out, transform 1s ease-out;
+    z-index: 997;
+}
+.people-order.active{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.form-information-order{
+    width: 400px;
+    height: 450px;
+    background-color: #fff;
+    margin: 0 auto;
+    border: 2px solid black;
+    border-radius: 10px;
+
+
+}
+.title-order{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+    padding:5px 10px;
+}
+.form-information-order form {
+    display: flex;
+    flex-direction: column;
+    padding:20px;
+    gap:10px;
+}
+.form-information-order form input{
+    padding: 5px;
+    height: 40px;
+    border-radius: 5px;
+    border:1px solid;
+}
 .header{
     position: fixed;
     top:0;
@@ -72,6 +118,7 @@
     background-image: url("f1.jpg");
     background-position:top;
     background-size: cover;
+    z-index: 999;
 }
 .search{
     position:absolute;
@@ -396,7 +443,7 @@ animation-delay: 1s;
     transform:translateY(50%);
     width:400px;
     height:440px;
-    background: transparent;
+    background:skyblue;
     border:2px solid rgba(255,255,255,.5);
     border-radius:20px;
     backdrop-filter: blur(20px);
@@ -407,6 +454,7 @@ animation-delay: 1s;
     overflow: hidden;
     transform: scale(0);
     transition:transform .5s ease, height .2s ease;
+    z-index: 998;
 }
 .wrapper.active-popup{
     transform: scale(1);
@@ -548,4 +596,34 @@ transform: translateX(0);
 }
 .login-register p a:hover{
     text-decoration: underline;
+}
+.address{
+    min-height: 100vh;
+    padding:10% 20%;
+    opacity:0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.address.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+.address-submit{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+
+}
+.form form{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+
+}
+.form form input{
+    width: 100%;
+    height: 40px;
+    border-radius:5px;
+    padding: 12px;
+    border: 1px solid;
 }
